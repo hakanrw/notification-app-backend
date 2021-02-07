@@ -1,0 +1,40 @@
+<html>
+    <header>
+        <script>
+            async function insert() {
+                document.querySelector("#status").innerHTML = "yukleniyor."
+                let resp = await fetch("/admin/insert", {
+                    method: "POST", 
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+                    },
+                    body: new URLSearchParams({
+                        title: document.querySelector("#title").value,
+                        message: document.querySelector("#message").value,
+                        password: document.querySelector("#password").value
+                    }).toString()
+                });
+                document.querySelector("#status").innerHTML = await resp.text();
+            }
+        </script>
+        <style>
+            body {
+                margin-left: 20px;
+                margin-top: 20px;
+            }
+
+            input {
+                display: block;
+                margin-bottom: 5px;
+            }
+        </style>
+    </header>
+
+    <body>
+        <input type="text" id="title" placeholder="title"/>
+        <input type="text" id="message" placeholder="message"/>
+        <input type="text" id="password" placeholder="password"/>
+        <input type="button" value="insert" onclick="insert()"/>
+        <p id="status"></p>
+    </body>
+</html>

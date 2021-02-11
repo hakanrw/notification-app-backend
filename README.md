@@ -7,6 +7,7 @@ Windows
 C:\notification-app-backend> set DATABASE_URL = "<veritabanı adresi>"
 C:\notification-app-backend> node server.js
 ```
+Sunucuyu açtıktan sonra `http://localhost:1337/admin` adresinden admin paneline erişebilirsiniz.
 ## Yönler
 | Yön | Parametreler | Açıklama | 
 | --- | --- | --- |

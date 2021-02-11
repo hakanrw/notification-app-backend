@@ -1,5 +1,5 @@
 // veritabanı adresini tanımla
-const MONGO_DATABASE_URI = `mongodb+srv://admin:${process.env.password}@main.jjhsx.mongodb.net/?retryWrites=true&w=majority`;
+const MONGO_DATABASE_URI = process.env.DATABASE_URL;
 
 // mongodb modülünü import et
 const mongodb = require('mongodb').MongoClient;

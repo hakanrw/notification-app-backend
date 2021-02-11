@@ -8,7 +8,10 @@ C:\notification-app-backend> set DATABASE_URL = "<veritabanı adresi>"
 C:\notification-app-backend> node server.js
 ```
 ## Yönler
-| Yön | Headers | Açıklama | 
+| Yön | Parametreler | Açıklama | 
 | --- | --- | --- |
-| `GET /notifications/get` | `fullCheck=true` veya `receiveDate=<Date>`| Header olarak belirtilen tarihten sonraki 20 bildirimi al. |
-| `POST /notifications/insert` |  | Bildirimlere yenisini ekle |
+| `GET /notifications/get` | **querystring** <br /> `fullCheck=true` veya  `receiveDate=<Date>` <hr /> **cookie** <br /> `SESSION_M=<SessionID>`| Belirtilen tarihten sonraki 20 bildirimi al. |
+| `POST /user/login` | **body (x-www-urlencoded)** <br /> `password=<String>` <br /> `mail=<String> | Giriş yap ve session tokeni al. |
+| `POST /user/register` | **body (x-www-urlencoded)** <br /> `password=<String>` <br /> `mail=<String> | Kayı ol. |
+| `GET /admin` | - | Tarayıcı üzerinde açılabilen yönetici sayfası |
+| `POST /admin/insert` | **body (x-www-urlencoded)** <br /> `password=1234qwer` <br /> `title=<String>` <br /> `message=<String>` | Bildirimlere yenisini ekle. |
